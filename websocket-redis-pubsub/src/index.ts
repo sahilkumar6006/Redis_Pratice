@@ -1,7 +1,7 @@
 import { WebSocket, WebSocketServer } from 'ws';
 import { createClient } from 'redis';
 
-// Configuration
+//! Configuration
 const WS_PORT = 3000;
 const REDIS_URL = 'redis://localhost:6379';
 
@@ -44,13 +44,13 @@ async function connectRedis(): Promise<void> {
 
 connectRedis();
 
-// User ID to WebSocket mapping
+//! User ID to WebSocket mapping
 const userSockets: Map<string, WebSocket> = new Map();
 
 wss.on('connection', ws => {
     console.log('New WebSocket connection');
 
-    // Define a property on the WebSocket object to store the userId
+    //! Define a property on the WebSocket object to store the userId
     (ws as any).userId = null;
 
     ws.on('message', message => {
