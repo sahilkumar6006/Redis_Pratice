@@ -1,0 +1,6 @@
+node_modules/
+# Ignore all log files  
+*.log
+# Ignore all npm debug files
+npm-debug.log*
+dist/
